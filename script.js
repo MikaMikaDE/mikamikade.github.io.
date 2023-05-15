@@ -5,7 +5,7 @@ const canvas = new fabric.Canvas('canvas', {
     preserveObjectStacking: true,
     uniformScaling:true
 });
-const heightDelta= 240-52;
+const heightDelta= 240-52; //188
 const scaleFactor= 600;
 var img = 1
 
@@ -42,25 +42,25 @@ function chooseCard(){
     });   
 }
 function applyBorder(){
-    if (radio_live.checked)    { fabric.Image.fromURL('./img/Live.png',   
-        function(live){canvas.add(live);
+    if (radio_live.checked)    { fabric.Image.fromURL('./img/Live.png',   function(live){canvas.add(live);
         live.set({top:heightDelta }).setCoords();
     }) };
-    
-    if (radio_multi.checked)   { fabric.Image.fromURL('./img/Multi.png',  
-        function(multi){canvas.add(multi);
+    if (radio_multi.checked)   { fabric.Image.fromURL('./img/Multi.png',  function(multi){canvas.add(multi);
         multi.set({top:heightDelta }).setCoords();
     }) };
-
-    if (radio_invi.checked)    { fabric.Image.fromURL('./img/Invi.png',   
-        function(invi){canvas.add(invi);
+    if (radio_invi.checked)    { fabric.Image.fromURL('./img/Invi.png',   function(invi){canvas.add(invi);
         invi.set({top:heightDelta }).setCoords();
     }) };
-
-    if (check_patreon.checked) { fabric.Image.fromURL('./img/logo_PA.png',
-        function(logo_PA){canvas.add(logo_PA);
+    if (check_patreon.checked) { fabric.Image.fromURL('./img/logo_PA.png',function(logo_PA){canvas.add(logo_PA);
         logo_PA.set({top:heightDelta+1, left:550 }).setCoords();
     }) };
+}
+
+function applyEffect(effectURL, topPos, leftPos){
+    fabric.Image.fromURL(effectURL,   
+    function(img){canvas.add(img);
+    img.set({top:topPos, left:leftPos}).setCoords();
+    }) 
 }
 
 function download(){

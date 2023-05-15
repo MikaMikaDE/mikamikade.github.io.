@@ -18,7 +18,7 @@
         <i> Upload or search for an image.</i><br>
         <div class="bordered long">
             <input  id="imageLoader"  type="file" accept="image/*" name="imageLoader" onchange="handleImage(event)"/>
-            <input  id="cardSearcher" type="text" size=18 value="Quickdraw Synchron">
+            <input  id="cardSearcher" type="text" size=18 style="margin-left: 80px;"value="Quickdraw Synchron">
             <button id="SearcherButt" onclick="chooseCard()">🔎 </button>
         </div>
     </div><br><br>
@@ -33,14 +33,11 @@
                     Multi-Day:    <input type="radio" name="drone" id="radio_multi" value="multi"><br>
                     Invitational: <input type="radio" name="drone" id="radio_invi"  value="invi">
                 </div>
-                <div class="bordered">  
-                    This is a Patreon event: <input type="checkbox" id="check_patreon" value="patreon">
-                </div>
             </div>
         </div>
         <div class ="subBlock">
-            <img src="./img/curlyBrace.png" style="margin-top:48px; display:inline-block">
-            <button onclick="applyBorder()" style="margin-top:84px; display:inline-block; margin-left:10px; vertical-align:top; ">Apply</button>
+            <img src="./img/curlyBrace.png" style="margin-top:48px; display:inline-block; size:50%;" >
+            <button onclick="applyBorder()" style="margin-top:65px; display:inline-block; margin-left:10px; vertical-align:top; ">Apply</button>
         </div>
     </div>
 
@@ -49,7 +46,14 @@
         <i> Click and drag to move your image.</i><br>
         <canvas id="canvas"></canvas>
     </div>
+    <div style="height:230"></div>
 
+    <div class="bordered long">
+        <button class="buttonSmall" onclick="applyEffect('./img/Shadow.png', 0, 0)">       Shadow </button>
+        <button class="buttonSmall" onclick="applyEffect('./img/AnimeZoom.png', 0, 0)">    Zooms  </button>
+        <button class="buttonSmall" onclick="applyEffect('./img/Heiroglyphics.png', 0, 0)">Heiros </button>
+        <button class="buttonSmall" onclick="applyEffect('./img/logo_PA.png', 188, 550)">  Patron</button>
+    </div>
 
 
     <div class="longBlock" style="margin-top: 10px">
