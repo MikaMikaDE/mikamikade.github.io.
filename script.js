@@ -34,7 +34,7 @@ function resetCanvas(){
 
 function chooseCard(){
     let input = document.getElementById("cardSearcher").value;
-    let cardSrc = "./allCards/"+input+".jpg"
+    let cardSrc = "./img/allCards/"+input+".jpg"
     fabric.Image.fromURL(cardSrc, function(cardSrc){
         cardSrc.scale(2);
         cardSrc.set({top:-250, left:-100 });
@@ -62,3 +62,12 @@ function applyBorder(){
         logo_PA.set({top:heightDelta+1, left:550 }).setCoords();
     }) };
 }
+
+function download(){
+    let canvasUrl = canvas.toDataURL();
+    const createEl = document.createElement('a');
+    createEl.href = canvasUrl;
+    createEl.download = "EventBanner";
+    createEl.click();
+    createEl.remove();
+};

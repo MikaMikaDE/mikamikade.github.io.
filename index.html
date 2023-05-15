@@ -11,18 +11,24 @@
 
 <body>
 <div style="display: block; margin-left: auto; margin-right: auto; width: 650px;">
-    <h1><img class="websiteLogo" src="./img/logo.png"> Events Banner Maker<hr></h1>
+    <h1><img class="websiteLogo" src="./img/logo.png"> Banner Generator<hr></h1>
 
-
+    <div class="longBlock">
+        <b> 1. Upload an image:</b><br>
+        <i> Upload or search for an image.</i><br>
+        <div class="bordered long">
+            <input  id="imageLoader"  type="file" accept="image/*" name="imageLoader" onchange="handleImage(event)"/>
+            <input  id="cardSearcher" type="text" size=18 value="Quickdraw Synchron">
+            <button id="SearcherButt" onclick="chooseCard()">🔎 </button>
+        </div>
+    </div><br><br>
 
     <div>
         <div class = "subBlock">
             <div>
-            <!-- Radio Buttons -->
-                <b> Event Type:<br></b>
+                <b> 2. Pick Event Type:<br></b>
                 <i> Pick whether it's a live or multi-day event.</i><br>
                 <div class="bordered" style="padding-bottom: 5px;">   
-                    Neither:      <input type="radio" name="drone" id="radio_none"  value="none"><br>
                     Live Event:   <input type="radio" name="drone" id="radio_live"  value="live"><br>
                     Multi-Day:    <input type="radio" name="drone" id="radio_multi" value="multi"><br>
                     Invitational: <input type="radio" name="drone" id="radio_invi"  value="invi">
@@ -33,43 +39,22 @@
             </div>
         </div>
         <div class ="subBlock">
-            <img src="./img/curlyBrace.png" style="margin-top:55px; display:inline-block">
-            <button onclick="applyBorder()" style="margin-left:10px; display:inline-block; vertical-align:top; margin-top:90px">Apply</button>
+            <img src="./img/curlyBrace.png" style="margin-top:48px; display:inline-block">
+            <button onclick="applyBorder()" style="margin-top:84px; display:inline-block; margin-left:10px; vertical-align:top; ">Apply</button>
         </div>
     </div>
 
-
-
     <div class="longBlock">
-        <b> Upload an image:<br></b>
-        <i> Upload or search for an image.</i><br>
-        <div class="bordered long">
-            <input  id="imageLoader"  type="file" accept="image/*" name="imageLoader" onchange="handleImage(event)"/>
-            <input  id="cardSearcher" type="text" size=18 value="Quickdraw Synchron" > 
-            <button id="cardSearcherButton" onclick="chooseCard()">🔎 </button>
-            <button id="resetButton"        onclick="resetCanvas()">Reset</button>
-        </div>
-    </div>
-
-
-
-    <div class="longBlock">
+        <b> 3. Adjust image:<br></b>
+        <i> Click and drag to move your image.</i><br>
         <canvas id="canvas"></canvas>
     </div>
 
 
 
-    <div class="longBlock" margin-top: 10px">
-        <a href="#" id="downloadButton" download="EventBanner.png" type="button" style="float:right;">Download</a>
-        <script>document.getElementById('downloadButton').addEventListener('click', function(e) {
-                let canvasUrl = canvas.toDataURL();
-                const createEl = document.createElement('a');
-                createEl.href = canvasUrl;
-                createEl.download = "EventBanner";
-                createEl.click();
-                createEl.remove();
-                });
-        </script>
+    <div class="longBlock" style="margin-top: 10px">
+        <button id="resetButton"    onclick="resetCanvas()">Reset</button>
+        <button id="downloadButton" onclick="download()"    download="EventBanner.png" type="button">Download</a>
     </div>
         
 </div>

@@ -1,4 +1,6 @@
-
+:root {
+    --white: #e9e9ed;
+  }
 body{ 
     background-color: rgb(40,43,48); 
     font-family: 'Whitney', sans-serif;
@@ -6,8 +8,11 @@ body{
     padding: none;
     margin: none;
     color: rgb(233, 233, 233);
-    
 }
+
+
+/* ---------------------------------------------- */
+
 .bordered{
     margin:  3px;
     padding: 5px;
@@ -32,42 +37,6 @@ hr{
     max-width: 600px; 
     margin-left:0;
 }
-a,button{
-    background-color: white;
-    border: solid 1pt rgb(40, 43, 48);
-    color: black;
-    border-radius: 8px;
-    padding: 8px 20px;
-    text-align: center;
-    text-decoration: none;
-    cursor:pointer;
-    transition: 0.2s;
-}
-a:hover,button:hover{
-    background-color: rgb(179, 223, 179);
-    transition: 0.2s;
-    color:black;
-}
-#cardSearcher{ 
-    transition:0.2s;
-    border:none;
-}
-#cardSearcher:hover{
-    background-color:rgb(179, 223, 179);
-    transition:0.2s;
-}
-#cardSearcherButton{
-    width:20px; 
-    padding:2px; 
-    background-color:white;
-    border-radius:3px;
-    border:none;
-    height:22px;
-}
-#cardSearcherButton:hover{
-    background-color:rgb(179, 223, 179)
-}
-
 .subBlock{
     display:inline-block;
     width:  300px; 
@@ -78,23 +47,53 @@ a:hover,button:hover{
     display:inline-block;
     width: 600px; 
 }
-/* canvas{
-    background-color: rgb(92, 92, 95);
-} */
-.previewImageSquare{
-    width:300px; height:300px; width:300px; overflow:hidden; border-radius: 8px;
+
+/* ---------------------------------------------- */
+
+button{
+    background-color: var(--white);
+    border: none;
+    color: black;
+    border-radius: 8px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor:pointer;
+    transition: 0.2s;
+    width:120px;
+    height:40px;
+    font-size:medium;
 }
-#resetButton{
-    margin-left: 80px; 
-    background-color: white;
+button:hover{
+    background-color: rgb(179, 223, 179);
+    transition: 0.2s;
     color:black;
-    padding-top:2px;
-    padding-bottom:2px;
-    padding-left:8px;
-    padding-right:8px;
-    transition:0.2s;
 }
-#resetButton:hover{
+
+/* ---------------------------------------------- */
+#cardSearcher{ 
+    transition:0.2s;
+    border:none;
+    border-radius:3px 0px 0px 3px;
+}
+#cardSearcher:hover{
     background-color:rgb(179, 223, 179);
     transition:0.2s;
 }
+#SearcherButt{
+    width:20px; 
+    padding:2px; 
+
+    margin:none;
+    margin-top:2px;
+    background-color:var(--white);
+    border-radius:0px 3px 3px 0px;
+    border:none;
+    height:20px;
+    vertical-align: top;
+    font-size: small;
+}
+#SearcherButt:hover{
+    background-color:rgb(179, 223, 179)
+}
+
