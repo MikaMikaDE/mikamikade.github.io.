@@ -1,0 +1,100 @@
+
+body{ 
+    background-color: rgb(40,43,48); 
+    font-family: 'Whitney', sans-serif;
+    font-size: large;
+    padding: none;
+    margin: none;
+    color: rgb(233, 233, 233);
+    
+}
+.bordered{
+    margin:  3px;
+    padding: 5px;
+    background-color: rgb(54,57,62);
+    border-radius: 8px;
+    width: 280px;  
+}
+.long{
+    width:585px;
+}
+.websiteLogo{
+    padding:none;
+    vertical-align:middle;
+}
+h1{
+    font-size: xx-large;
+    text-align: left;
+}
+hr{
+    color:rgb(30,33,36);
+    box-shadow:0px 2px 4px;
+    max-width: 600px; 
+    margin-left:0;
+}
+a,button{
+    background-color: white;
+    border: solid 1pt rgb(40, 43, 48);
+    color: black;
+    border-radius: 8px;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor:pointer;
+    transition: 0.2s;
+}
+a:hover,button:hover{
+    background-color: rgb(179, 223, 179);
+    transition: 0.2s;
+    color:black;
+}
+#cardSearcher{ 
+    transition:0.2s;
+    border:none;
+}
+#cardSearcher:hover{
+    background-color:rgb(179, 223, 179);
+    transition:0.2s;
+}
+#cardSearcherButton{
+    width:20px; 
+    padding:2px; 
+    background-color:white;
+    border-radius:3px;
+    border:none;
+    height:22px;
+}
+#cardSearcherButton:hover{
+    background-color:rgb(179, 223, 179)
+}
+
+.subBlock{
+    display:inline-block;
+    width:  300px; 
+    height: 200px;
+    vertical-align: top;
+}
+.longBlock{
+    display:inline-block;
+    width: 600px; 
+}
+/* canvas{
+    background-color: rgb(92, 92, 95);
+} */
+.previewImageSquare{
+    width:300px; height:300px; width:300px; overflow:hidden; border-radius: 8px;
+}
+#resetButton{
+    margin-left: 80px; 
+    background-color: white;
+    color:black;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-left:8px;
+    padding-right:8px;
+    transition:0.2s;
+}
+#resetButton:hover{
+    background-color:rgb(179, 223, 179);
+    transition:0.2s;
+}

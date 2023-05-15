@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta Content-Type: application; charset=UTF-8>
+    <meta http-equiv='X-UA-Compatible'>
+    <title>FL Event Maker</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.cdnfonts.com/css/whitney-2" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div style="display: block; margin-left: auto; margin-right: auto; width: 650px;">
+    <h1><img class="websiteLogo" src="./img/logo.png"> Events Banner Maker<hr></h1>
+
+
+
+    <div>
+        <div class = "subBlock">
+            <div>
+            <!-- Radio Buttons -->
+                <b> Event Type:<br></b>
+                <i> Pick whether it's a live or multi-day event.</i><br>
+                <div class="bordered" style="padding-bottom: 5px;">   
+                    Neither:      <input type="radio" name="drone" id="radio_none"  value="none"><br>
+                    Live Event:   <input type="radio" name="drone" id="radio_live"  value="live"><br>
+                    Multi-Day:    <input type="radio" name="drone" id="radio_multi" value="multi"><br>
+                    Invitational: <input type="radio" name="drone" id="radio_invi"  value="invi">
+                </div>
+                <div class="bordered">  
+                    This is a Patreon event: <input type="checkbox" id="check_patreon" value="patreon">
+                </div>
+            </div>
+        </div>
+        <div class ="subBlock">
+            <img src="./img/curlyBrace.png" style="margin-top:55px; display:inline-block">
+            <button onclick="applyBorder()" style="margin-left:10px; display:inline-block; vertical-align:top; margin-top:90px">Apply</button>
+        </div>
+    </div>
+
+
+
+    <div class="longBlock">
+        <b> Upload an image:<br></b>
+        <i> Upload or search for an image.</i><br>
+        <div class="bordered long">
+            <input  id="imageLoader"  type="file" accept="image/*" name="imageLoader" onchange="handleImage(event)"/>
+            <input  id="cardSearcher" type="text" size=18 value="Quickdraw Synchron" > 
+            <button id="cardSearcherButton" onclick="chooseCard()">🔎 </button>
+            <button id="resetButton"        onclick="resetCanvas()">Reset</button>
+        </div>
+    </div>
+
+
+
+    <div class="longBlock">
+        <canvas id="canvas"></canvas>
+    </div>
+
+
+
+    <div class="longBlock" margin-top: 10px">
+        <a href="#" id="downloadButton" download="EventBanner.png" type="button" style="float:right;">Download</a>
+        <script>document.getElementById('downloadButton').addEventListener('click', function(e) {
+                let canvasUrl = canvas.toDataURL();
+                const createEl = document.createElement('a');
+                createEl.href = canvasUrl;
+                createEl.download = "EventBanner";
+                createEl.click();
+                createEl.remove();
+                });
+        </script>
+    </div>
+        
+</div>
+
+<script src="fabric.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
