@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='confverter.css'>
+</head>
+
+
+<body>
+  <h1>Mika's super CONFverter</h1>
+  <form enctype="multipart/form-data" action="/" method="POST">
+    <input type="file" name="conf" />
+    <input type="submit" value="Upload File" onclick="processConfFile(conf)" />
+  </form>
+  
+</body>
+
+
+<script type = "text/javascript">
+
+  function processConfFile(conf){
+
+  conf = conf.replace(/[\w\W]+?\n+?/,""); //remove 1st line
+  conf = conf.replace(/[\w\W]+?\n+?/,""); //do it again
+
+  conf = conf.replace('#Forbidden', '{"');
+  conf = conf.replace(/ 0 --/g, '": 1, "');
+  conf = conf.replace('#Limited', '');
+  conf = conf.replace(/ 1 --/g, '": 1, "');
+  conf = conf.replace('#Semi-Limited', '');
+  conf = conf.replace(/ 2 --/g, '": 2, "');
+  conf = conf.replace('#Unlimited', '');
+  conf = conf.replace(/ 3 --/g, '": 3, "');
+  
+  conf = conf.replace(/(\r\n|\n|\r)/gm, ""); //remove \n (does for win, mac, linux)
+  conf = conf.replace(/.$/,"}")
+
+  console.log(conf)
+  }
+</script>
+</html>
