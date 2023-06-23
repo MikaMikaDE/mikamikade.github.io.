@@ -34,7 +34,7 @@ function resetCanvas(){
 
 function chooseCard(){
     let input = document.getElementById("cardSearcher").value;
-    let cardSrc = "./allArt/"+input+".jpg"
+    let cardSrc = "./allCards/"+input+".jpg"
     fabric.Image.fromURL(cardSrc, function(cardSrc){
         cardSrc.scale(2);
         cardSrc.set({top:-250, left:-100 });
